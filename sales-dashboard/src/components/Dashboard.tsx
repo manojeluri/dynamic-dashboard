@@ -370,8 +370,8 @@ export default function Dashboard() {
     <div className="min-h-screen bg-[#FAFBFC]">
       {/* Filter Toolbar - Full Width Header */}
       <div className="glass-header bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 border-b border-white-10">
-        <div className="max-w-7xl mx-auto px-8 py-5">
-          <div className="flex flex-wrap gap-5 items-center">
+        <div className="max-w-7xl mx-auto responsive-padding">
+          <div className="flex flex-wrap responsive-gap items-center">
             {/* Category Filter */}
             <div className="flex items-center gap-3">
               <span className="text-sm font-semibold text-blue-100 tracking-wide">Category</span>
@@ -398,7 +398,7 @@ export default function Dashboard() {
               </div>
             </div>
 
-            <div className="h-8 w-px bg-gradient-to-b from-transparent via-blue-400 to-transparent opacity-30"></div>
+            <div className="divider-desktop h-8 w-px bg-gradient-to-b from-transparent via-blue-400 to-transparent opacity-30"></div>
 
             {/* Date Range Filter */}
             <div className="flex items-center gap-3">
@@ -461,7 +461,7 @@ export default function Dashboard() {
               )}
             </div>
 
-            <div className="h-8 w-px bg-gradient-to-b from-transparent via-blue-400 to-transparent opacity-30"></div>
+            <div className="divider-desktop h-8 w-px bg-gradient-to-b from-transparent via-blue-400 to-transparent opacity-30"></div>
 
             {/* Company Filter */}
             <div className="flex items-center gap-3">
@@ -480,7 +480,7 @@ export default function Dashboard() {
 
             {(selectedType !== 'ALL' || selectedDate !== 'ALL' || selectedCompany !== 'ALL') && (
               <>
-                <div className="h-8 w-px bg-gradient-to-b from-transparent via-blue-400 to-transparent opacity-30"></div>
+                <div className="divider-desktop h-8 w-px bg-gradient-to-b from-transparent via-blue-400 to-transparent opacity-30"></div>
                 <button
                   onClick={() => {
                     setSelectedType('ALL');
@@ -501,7 +501,7 @@ export default function Dashboard() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-8 py-4 space-y-4">
+      <div className="max-w-7xl mx-auto main-content-padding space-y-4">
         {/* KPI Grid */}
         <div className="kpi-grid">
           {/* Total Revenue */}
@@ -595,58 +595,58 @@ export default function Dashboard() {
         </div>
 
         {/* Tab Navigation */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-1.5">
-          <div className="flex gap-1">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-1.5 overflow-x-auto">
+          <div className="flex gap-1 min-w-max">
             <button
               onClick={() => setActiveTab('overview')}
-              className={`flex-1 px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-200 ${
+              className={`flex-1 tab-button font-semibold rounded-lg transition-all duration-200 ${
                 activeTab === 'overview'
                   ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md'
                   : 'text-gray-600 hover:bg-gray-50'
               }`}
             >
-              <div className="flex items-center justify-center gap-2">
+              <div className="flex items-center justify-center gap-1.5">
                 <TrendingUp className="w-4 h-4" />
-                <span>Overview</span>
+                <span className="hidden sm:inline">Overview</span>
               </div>
             </button>
             <button
               onClick={() => setActiveTab('products')}
-              className={`flex-1 px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-200 ${
+              className={`flex-1 tab-button font-semibold rounded-lg transition-all duration-200 ${
                 activeTab === 'products'
                   ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md'
                   : 'text-gray-600 hover:bg-gray-50'
               }`}
             >
-              <div className="flex items-center justify-center gap-2">
+              <div className="flex items-center justify-center gap-1.5">
                 <Package className="w-4 h-4" />
-                <span>Product Analysis</span>
+                <span className="hidden sm:inline">Products</span>
               </div>
             </button>
             <button
               onClick={() => setActiveTab('velocity')}
-              className={`flex-1 px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-200 ${
+              className={`flex-1 tab-button font-semibold rounded-lg transition-all duration-200 ${
                 activeTab === 'velocity'
                   ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md'
                   : 'text-gray-600 hover:bg-gray-50'
               }`}
             >
-              <div className="flex items-center justify-center gap-2">
+              <div className="flex items-center justify-center gap-1.5">
                 <Zap className="w-4 h-4" />
-                <span>Velocity Analysis</span>
+                <span className="hidden sm:inline">Velocity</span>
               </div>
             </button>
             <button
               onClick={() => setActiveTab('forecast')}
-              className={`flex-1 px-6 py-3 text-sm font-semibold rounded-lg transition-all duration-200 ${
+              className={`flex-1 tab-button font-semibold rounded-lg transition-all duration-200 ${
                 activeTab === 'forecast'
                   ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-md'
                   : 'text-gray-600 hover:bg-gray-50'
               }`}
             >
-              <div className="flex items-center justify-center gap-2">
+              <div className="flex items-center justify-center gap-1.5">
                 <Target className="w-4 h-4" />
-                <span>Sales Forecast</span>
+                <span className="hidden sm:inline">Forecast</span>
               </div>
             </button>
           </div>
