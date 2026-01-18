@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import {
-  LineChart,
-  Line,
   BarChart,
   Bar,
   PieChart,
@@ -11,13 +9,12 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
   ReferenceLine,
   Area,
   AreaChart,
 } from 'recharts';
-import { TrendingUp, Package, DollarSign, Calendar, Building2, ArrowUpDown, ArrowUp, ArrowDown, Zap, TrendingDown, Target, Activity } from 'lucide-react';
+import { TrendingUp, Package, DollarSign, Calendar, Building2, ArrowUpDown, ArrowUp, ArrowDown, Zap, Target, Activity } from 'lucide-react';
 import type { DailySales } from '../types';
 import {
   loadAllDataFromManifest,
@@ -25,7 +22,6 @@ import {
   aggregateByDate,
   getTotalSales,
   getTotalQuantity,
-  getTopProducts,
   enrichWithCompanyData,
   aggregateByCompany,
   getTopCompanies,
@@ -809,13 +805,13 @@ export default function Dashboard() {
             <ResponsiveContainer width="100%" height={300}>
               <PieChart>
                 <Pie
-                  data={topProducts.slice(0, 6)}
+                  data={topProducts.slice(0, 6) as unknown as Record<string, unknown>[]}
                   dataKey="totalAmount"
                   nameKey="productName"
                   cx="50%"
                   cy="50%"
                   outerRadius={100}
-                  label={(entry) => entry.productName}
+                  label={({ name }: { name?: string }) => name || ''}
                   labelLine={{ stroke: '#9CA3AF', strokeWidth: 1 }}
                 >
                   {topProducts.slice(0, 6).map((_, index) => (
@@ -893,13 +889,13 @@ export default function Dashboard() {
             <ResponsiveContainer width="100%" height={300}>
               <PieChart>
                 <Pie
-                  data={topCompanies.slice(0, 8)}
+                  data={topCompanies.slice(0, 8) as unknown as Record<string, unknown>[]}
                   dataKey="totalAmount"
                   nameKey="companyName"
                   cx="50%"
                   cy="50%"
                   outerRadius={100}
-                  label={(entry) => entry.companyName}
+                  label={({ name }: { name?: string }) => name || ''}
                   labelLine={{ stroke: '#9CA3AF', strokeWidth: 1 }}
                 >
                   {topCompanies.slice(0, 8).map((_, index) => (

@@ -98,7 +98,7 @@ export function findMissingDates(allDates: string[]): string[] {
  */
 function calculateMovingAverage(
   values: number[],
-  targetIndex: number,
+  _targetIndex: number,
   windowSize: number = 7
 ): { value: number; confidence: number } {
   // Ensure we have enough data
