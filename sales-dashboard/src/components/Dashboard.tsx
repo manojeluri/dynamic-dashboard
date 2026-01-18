@@ -371,11 +371,12 @@ export default function Dashboard() {
       {/* Filter Toolbar - Full Width Header */}
       <div className="glass-header bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 border-b border-white-10">
         <div className="max-w-7xl mx-auto responsive-padding">
-          <div className="flex flex-wrap responsive-gap items-center">
-            {/* Category Filter */}
-            <div className="flex items-center gap-3">
-              <span className="text-sm font-semibold text-blue-100 tracking-wide">Category</span>
-              <div className="inline-flex glass-control rounded-full p-2">
+          {/* Mobile Layout: Stacked filters */}
+          <div className="filter-container">
+            {/* Row 1: Category Filter */}
+            <div className="filter-row">
+              <span className="filter-label">Category</span>
+              <div className="inline-flex glass-control rounded-full p-1.5">
                 {[
                   { value: 'ALL', label: 'All' },
                   { value: 'PS', label: 'Pesticides' },
@@ -384,9 +385,7 @@ export default function Dashboard() {
                   <button
                     key={value}
                     onClick={() => setSelectedType(value as any)}
-                    className={`px-5 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
-                      index > 0 ? 'ml-2' : ''
-                    } ${
+                    className={`filter-btn ${index > 0 ? 'ml-1' : ''} ${
                       selectedType === value
                         ? 'glass-active text-white shadow-glass'
                         : 'glass-inactive text-slate-700 hover:text-slate-900 hover:glass-hover'
@@ -398,34 +397,37 @@ export default function Dashboard() {
               </div>
             </div>
 
-            <div className="divider-desktop h-8 w-px bg-gradient-to-b from-transparent via-blue-400 to-transparent opacity-30"></div>
+            {/* Row 2: Period Filter */}
+            <div className="filter-row">
+              <span className="filter-label">Period</span>
+              <div className="flex items-center gap-2 flex-wrap">
+                <select
+                  value={dateRangePreset}
+                  onChange={(e) => handlePresetRange(e.target.value)}
+                  className="glass-select filter-select"
+                >
+                  <option value="ALL">All Time</option>
+                  <option value="TODAY">Today</option>
+                  <option value="LAST_7">Last 7 Days</option>
+                  <option value="LAST_30">Last 30 Days</option>
+                  <option value="THIS_MONTH">This Month</option>
+                  <option value="CUSTOM">Custom Range</option>
+                </select>
 
-            {/* Date Range Filter */}
-            <div className="flex items-center gap-3">
-              <span className="text-sm font-semibold text-blue-100 tracking-wide">Period</span>
-              <select
-                value={dateRangePreset}
-                onChange={(e) => handlePresetRange(e.target.value)}
-                className="glass-select px-5 py-2.5 text-sm rounded-full text-gray-100 font-medium focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 transition-all duration-300"
-              >
-                <option value="ALL">All Time</option>
-                <option value="TODAY">Today</option>
-                <option value="LAST_7">Last 7 Days</option>
-                <option value="LAST_30">Last 30 Days</option>
-                <option value="THIS_MONTH">This Month</option>
-                <option value="CUSTOM">Custom Range</option>
-              </select>
+                {/* Date Range Display */}
+                {getDateRangeDisplay() && (
+                  <span className="date-badge">
+                    {getDateRangeDisplay()}
+                  </span>
+                )}
+              </div>
+            </div>
 
-              {/* Date Range Display */}
-              {getDateRangeDisplay() && (
-                <span className="px-3 py-1.5 bg-blue-500 bg-opacity-20 text-blue-100 text-xs font-semibold rounded-full border border-blue-400 border-opacity-30">
-                  {getDateRangeDisplay()}
-                </span>
-              )}
-
-              {/* Custom Range Selectors */}
-              {dateRangePreset === 'CUSTOM' && (
-                <>
+            {/* Custom Range Selectors - Only show when CUSTOM is selected */}
+            {dateRangePreset === 'CUSTOM' && (
+              <div className="filter-row">
+                <span className="filter-label">Range</span>
+                <div className="flex items-center gap-2 flex-wrap">
                   <select
                     value={dateRangeStart}
                     onChange={(e) => {
@@ -434,7 +436,7 @@ export default function Dashboard() {
                         setSelectedDate('RANGE');
                       }
                     }}
-                    className="glass-select px-4 py-2 text-xs rounded-full text-gray-100 font-medium focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 transition-all duration-300"
+                    className="glass-select filter-select-small"
                   >
                     <option value="">From</option>
                     {availableDates.map(date => (
@@ -450,26 +452,24 @@ export default function Dashboard() {
                         setSelectedDate('RANGE');
                       }
                     }}
-                    className="glass-select px-4 py-2 text-xs rounded-full text-gray-100 font-medium focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 transition-all duration-300"
+                    className="glass-select filter-select-small"
                   >
                     <option value="">To</option>
                     {availableDates.map(date => (
                       <option key={date} value={date}>{formatDate(date)}</option>
                     ))}
                   </select>
-                </>
-              )}
-            </div>
+                </div>
+              </div>
+            )}
 
-            <div className="divider-desktop h-8 w-px bg-gradient-to-b from-transparent via-blue-400 to-transparent opacity-30"></div>
-
-            {/* Company Filter */}
-            <div className="flex items-center gap-3">
-              <span className="text-sm font-semibold text-blue-100 tracking-wide">Company</span>
+            {/* Row 3: Company Filter */}
+            <div className="filter-row">
+              <span className="filter-label">Company</span>
               <select
                 value={selectedCompany}
                 onChange={(e) => setSelectedCompany(e.target.value)}
-                className="glass-select px-5 py-2.5 text-sm rounded-full text-gray-100 font-medium focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 transition-all duration-300"
+                className="glass-select filter-select"
               >
                 <option value="ALL">All Companies</option>
                 {availableCompanies.map(company => (
@@ -478,9 +478,9 @@ export default function Dashboard() {
               </select>
             </div>
 
+            {/* Clear Filters Button */}
             {(selectedType !== 'ALL' || selectedDate !== 'ALL' || selectedCompany !== 'ALL') && (
-              <>
-                <div className="divider-desktop h-8 w-px bg-gradient-to-b from-transparent via-blue-400 to-transparent opacity-30"></div>
+              <div className="filter-row">
                 <button
                   onClick={() => {
                     setSelectedType('ALL');
@@ -490,11 +490,11 @@ export default function Dashboard() {
                     setDateRangeEnd('');
                     setDateRangePreset('ALL');
                   }}
-                  className="glass-button px-5 py-2.5 text-sm text-blue-200 hover:text-white font-semibold rounded-full transition-all duration-300"
+                  className="glass-button px-4 py-2 text-sm text-blue-200 hover:text-white font-semibold rounded-full transition-all duration-300"
                 >
                   Clear filters
                 </button>
-              </>
+              </div>
             )}
           </div>
         </div>
