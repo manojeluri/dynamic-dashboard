@@ -126,6 +126,15 @@ export default function Dashboard() {
     const dates = Array.from(new Set(allData.map(d => d.date))).sort();
     setAvailableDates(dates);
 
+    // Default to the most recent date
+    if (dates.length > 0) {
+      const latestDate = dates[dates.length - 1];
+      setDateRangeStart(latestDate);
+      setDateRangeEnd(latestDate);
+      setSelectedDate('RANGE');
+      setDateRangePreset('TODAY');
+    }
+
     setSalesData(allData);
     setLoading(false);
   }
