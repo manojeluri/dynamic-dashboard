@@ -1,0 +1,1055 @@
+{
+  "generated": "2026-01-06T08:41:14.004Z",
+  "files": [
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct09.XLS",
+      "type": "PS",
+      "date": "2025-10-09",
+      "filename": "Oct09.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct09.XLS",
+      "type": "FS",
+      "date": "2025-10-09",
+      "filename": "Oct09.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct10.XLS",
+      "type": "PS",
+      "date": "2025-10-10",
+      "filename": "Oct10.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct10.XLS",
+      "type": "FS",
+      "date": "2025-10-10",
+      "filename": "Oct10.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct11.XLS",
+      "type": "PS",
+      "date": "2025-10-11",
+      "filename": "Oct11.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct11.XLS",
+      "type": "FS",
+      "date": "2025-10-11",
+      "filename": "Oct11.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct15.XLS",
+      "type": "PS",
+      "date": "2025-10-15",
+      "filename": "Oct15.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct15.XLS",
+      "type": "FS",
+      "date": "2025-10-15",
+      "filename": "Oct15.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct16.XLS",
+      "type": "PS",
+      "date": "2025-10-16",
+      "filename": "Oct16.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct16.XLS",
+      "type": "FS",
+      "date": "2025-10-16",
+      "filename": "Oct16.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct17.XLS",
+      "type": "PS",
+      "date": "2025-10-17",
+      "filename": "Oct17.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct17.XLS",
+      "type": "FS",
+      "date": "2025-10-17",
+      "filename": "Oct17.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct18.XLS",
+      "type": "PS",
+      "date": "2025-10-18",
+      "filename": "Oct18.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct18.XLS",
+      "type": "FS",
+      "date": "2025-10-18",
+      "filename": "Oct18.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct19.XLS",
+      "type": "PS",
+      "date": "2025-10-19",
+      "filename": "Oct19.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct19.XLS",
+      "type": "FS",
+      "date": "2025-10-19",
+      "filename": "Oct19.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct20.XLS",
+      "type": "PS",
+      "date": "2025-10-20",
+      "filename": "Oct20.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct20.XLS",
+      "type": "FS",
+      "date": "2025-10-20",
+      "filename": "Oct20.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct21.XLS",
+      "type": "PS",
+      "date": "2025-10-21",
+      "filename": "Oct21.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct21.XLS",
+      "type": "FS",
+      "date": "2025-10-21",
+      "filename": "Oct21.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct22.XLS",
+      "type": "PS",
+      "date": "2025-10-22",
+      "filename": "Oct22.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct22.XLS",
+      "type": "FS",
+      "date": "2025-10-22",
+      "filename": "Oct22.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct23.XLS",
+      "type": "PS",
+      "date": "2025-10-23",
+      "filename": "Oct23.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct23.XLS",
+      "type": "FS",
+      "date": "2025-10-23",
+      "filename": "Oct23.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct24.XLS",
+      "type": "PS",
+      "date": "2025-10-24",
+      "filename": "Oct24.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct24.XLS",
+      "type": "FS",
+      "date": "2025-10-24",
+      "filename": "Oct24.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct25.XLS",
+      "type": "PS",
+      "date": "2025-10-25",
+      "filename": "Oct25.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct25.XLS",
+      "type": "FS",
+      "date": "2025-10-25",
+      "filename": "Oct25.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct26.XLS",
+      "type": "PS",
+      "date": "2025-10-26",
+      "filename": "Oct26.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct26.XLS",
+      "type": "FS",
+      "date": "2025-10-26",
+      "filename": "Oct26.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct27.XLS",
+      "type": "PS",
+      "date": "2025-10-27",
+      "filename": "Oct27.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct27.XLS",
+      "type": "FS",
+      "date": "2025-10-27",
+      "filename": "Oct27.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct28.XLS",
+      "type": "PS",
+      "date": "2025-10-28",
+      "filename": "Oct28.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct29.XLS",
+      "type": "PS",
+      "date": "2025-10-29",
+      "filename": "Oct29.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct29.XLS",
+      "type": "FS",
+      "date": "2025-10-29",
+      "filename": "Oct29.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct30.XLS",
+      "type": "PS",
+      "date": "2025-10-30",
+      "filename": "Oct30.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct30.XLS",
+      "type": "FS",
+      "date": "2025-10-30",
+      "filename": "Oct30.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/PS/Oct31.XLS",
+      "type": "PS",
+      "date": "2025-10-31",
+      "filename": "Oct31.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Oct/FS/Oct31.XLS",
+      "type": "FS",
+      "date": "2025-10-31",
+      "filename": "Oct31.XLS",
+      "month": "Oct"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov01.XLS",
+      "type": "PS",
+      "date": "2025-11-01",
+      "filename": "Nov01.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov01.XLS",
+      "type": "FS",
+      "date": "2025-11-01",
+      "filename": "Nov01.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov02.XLS",
+      "type": "PS",
+      "date": "2025-11-02",
+      "filename": "Nov02.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov02.XLS",
+      "type": "FS",
+      "date": "2025-11-02",
+      "filename": "Nov02.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov03.XLS",
+      "type": "PS",
+      "date": "2025-11-03",
+      "filename": "Nov03.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov03.XLS",
+      "type": "FS",
+      "date": "2025-11-03",
+      "filename": "Nov03.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov04.XLS",
+      "type": "PS",
+      "date": "2025-11-04",
+      "filename": "Nov04.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov04.XLS",
+      "type": "FS",
+      "date": "2025-11-04",
+      "filename": "Nov04.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov05.XLS",
+      "type": "PS",
+      "date": "2025-11-05",
+      "filename": "Nov05.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov05.XLS",
+      "type": "FS",
+      "date": "2025-11-05",
+      "filename": "Nov05.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov06.XLS",
+      "type": "PS",
+      "date": "2025-11-06",
+      "filename": "Nov06.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov06.XLS",
+      "type": "FS",
+      "date": "2025-11-06",
+      "filename": "Nov06.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov07.XLS",
+      "type": "PS",
+      "date": "2025-11-07",
+      "filename": "Nov07.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov07.XLS",
+      "type": "FS",
+      "date": "2025-11-07",
+      "filename": "Nov07.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov08.XLS",
+      "type": "PS",
+      "date": "2025-11-08",
+      "filename": "Nov08.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov09.XLS",
+      "type": "PS",
+      "date": "2025-11-09",
+      "filename": "Nov09.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov09.XLS",
+      "type": "FS",
+      "date": "2025-11-09",
+      "filename": "Nov09.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov10.XLS",
+      "type": "PS",
+      "date": "2025-11-10",
+      "filename": "Nov10.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov10.XLS",
+      "type": "FS",
+      "date": "2025-11-10",
+      "filename": "Nov10.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov11.XLS",
+      "type": "PS",
+      "date": "2025-11-11",
+      "filename": "Nov11.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov11.XLS",
+      "type": "FS",
+      "date": "2025-11-11",
+      "filename": "Nov11.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov12.XLS",
+      "type": "PS",
+      "date": "2025-11-12",
+      "filename": "Nov12.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov12.XLS",
+      "type": "FS",
+      "date": "2025-11-12",
+      "filename": "Nov12.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov13.XLS",
+      "type": "PS",
+      "date": "2025-11-13",
+      "filename": "Nov13.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov13.XLS",
+      "type": "FS",
+      "date": "2025-11-13",
+      "filename": "Nov13.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov14.XLS",
+      "type": "PS",
+      "date": "2025-11-14",
+      "filename": "Nov14.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov14.XLS",
+      "type": "FS",
+      "date": "2025-11-14",
+      "filename": "Nov14.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov15.XLS",
+      "type": "PS",
+      "date": "2025-11-15",
+      "filename": "Nov15.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov15.XLS",
+      "type": "FS",
+      "date": "2025-11-15",
+      "filename": "Nov15.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov16.XLS",
+      "type": "PS",
+      "date": "2025-11-16",
+      "filename": "Nov16.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov16.XLS",
+      "type": "FS",
+      "date": "2025-11-16",
+      "filename": "Nov16.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov17.XLS",
+      "type": "PS",
+      "date": "2025-11-17",
+      "filename": "Nov17.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov17.XLS",
+      "type": "FS",
+      "date": "2025-11-17",
+      "filename": "Nov17.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov18.XLS",
+      "type": "PS",
+      "date": "2025-11-18",
+      "filename": "Nov18.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov18.XLS",
+      "type": "FS",
+      "date": "2025-11-18",
+      "filename": "Nov18.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov19.XLS",
+      "type": "PS",
+      "date": "2025-11-19",
+      "filename": "Nov19.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov19.XLS",
+      "type": "FS",
+      "date": "2025-11-19",
+      "filename": "Nov19.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/PS/Nov20.XLS",
+      "type": "PS",
+      "date": "2025-11-20",
+      "filename": "Nov20.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Nov/FS/Nov20.XLS",
+      "type": "FS",
+      "date": "2025-11-20",
+      "filename": "Nov20.XLS",
+      "month": "Nov"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec01.XLS",
+      "type": "PS",
+      "date": "2025-12-01",
+      "filename": "Dec01.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec01.XLS",
+      "type": "FS",
+      "date": "2025-12-01",
+      "filename": "Dec01.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec02.XLS",
+      "type": "PS",
+      "date": "2025-12-02",
+      "filename": "Dec02.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec02.XLS",
+      "type": "FS",
+      "date": "2025-12-02",
+      "filename": "Dec02.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec03.XLS",
+      "type": "PS",
+      "date": "2025-12-03",
+      "filename": "Dec03.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec03.XLS",
+      "type": "FS",
+      "date": "2025-12-03",
+      "filename": "Dec03.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec04.XLS",
+      "type": "PS",
+      "date": "2025-12-04",
+      "filename": "Dec04.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec04.XLS",
+      "type": "FS",
+      "date": "2025-12-04",
+      "filename": "Dec04.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec05.XLS",
+      "type": "PS",
+      "date": "2025-12-05",
+      "filename": "Dec05.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec05.XLS",
+      "type": "FS",
+      "date": "2025-12-05",
+      "filename": "Dec05.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec06.XLS",
+      "type": "PS",
+      "date": "2025-12-06",
+      "filename": "Dec06.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec06.XLS",
+      "type": "FS",
+      "date": "2025-12-06",
+      "filename": "Dec06.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec07.XLS",
+      "type": "PS",
+      "date": "2025-12-07",
+      "filename": "Dec07.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec07.XLS",
+      "type": "FS",
+      "date": "2025-12-07",
+      "filename": "Dec07.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec08.XLS",
+      "type": "PS",
+      "date": "2025-12-08",
+      "filename": "Dec08.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec08.XLS",
+      "type": "FS",
+      "date": "2025-12-08",
+      "filename": "Dec08.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec09.XLS",
+      "type": "PS",
+      "date": "2025-12-09",
+      "filename": "Dec09.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec09.XLS",
+      "type": "FS",
+      "date": "2025-12-09",
+      "filename": "Dec09.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec10.XLS",
+      "type": "PS",
+      "date": "2025-12-10",
+      "filename": "Dec10.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec10.XLS",
+      "type": "FS",
+      "date": "2025-12-10",
+      "filename": "Dec10.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec11.XLS",
+      "type": "PS",
+      "date": "2025-12-11",
+      "filename": "Dec11.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec11.XLS",
+      "type": "FS",
+      "date": "2025-12-11",
+      "filename": "Dec11.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec12.XLS",
+      "type": "PS",
+      "date": "2025-12-12",
+      "filename": "Dec12.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec12.XLS",
+      "type": "FS",
+      "date": "2025-12-12",
+      "filename": "Dec12.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec13.XLS",
+      "type": "PS",
+      "date": "2025-12-13",
+      "filename": "Dec13.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec13.XLS",
+      "type": "FS",
+      "date": "2025-12-13",
+      "filename": "Dec13.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec14.XLS",
+      "type": "PS",
+      "date": "2025-12-14",
+      "filename": "Dec14.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec14.XLS",
+      "type": "FS",
+      "date": "2025-12-14",
+      "filename": "Dec14.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec15.XLS",
+      "type": "PS",
+      "date": "2025-12-15",
+      "filename": "Dec15.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec15.XLS",
+      "type": "FS",
+      "date": "2025-12-15",
+      "filename": "Dec15.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec16.XLS",
+      "type": "PS",
+      "date": "2025-12-16",
+      "filename": "Dec16.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec16.XLS",
+      "type": "FS",
+      "date": "2025-12-16",
+      "filename": "Dec16.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec17.XLS",
+      "type": "PS",
+      "date": "2025-12-17",
+      "filename": "Dec17.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec17.XLS",
+      "type": "FS",
+      "date": "2025-12-17",
+      "filename": "Dec17.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec18.XLS",
+      "type": "PS",
+      "date": "2025-12-18",
+      "filename": "Dec18.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec18.XLS",
+      "type": "FS",
+      "date": "2025-12-18",
+      "filename": "Dec18.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec19.XLS",
+      "type": "PS",
+      "date": "2025-12-19",
+      "filename": "Dec19.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec19.XLS",
+      "type": "FS",
+      "date": "2025-12-19",
+      "filename": "Dec19.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec20.XLS",
+      "type": "PS",
+      "date": "2025-12-20",
+      "filename": "Dec20.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec20.XLS",
+      "type": "FS",
+      "date": "2025-12-20",
+      "filename": "Dec20.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec21.XLS",
+      "type": "PS",
+      "date": "2025-12-21",
+      "filename": "Dec21.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec21.XLS",
+      "type": "FS",
+      "date": "2025-12-21",
+      "filename": "Dec21.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec22.XLS",
+      "type": "PS",
+      "date": "2025-12-22",
+      "filename": "Dec22.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec22.XLS",
+      "type": "FS",
+      "date": "2025-12-22",
+      "filename": "Dec22.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec23.XLS",
+      "type": "PS",
+      "date": "2025-12-23",
+      "filename": "Dec23.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec23.XLS",
+      "type": "FS",
+      "date": "2025-12-23",
+      "filename": "Dec23.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec24.XLS",
+      "type": "PS",
+      "date": "2025-12-24",
+      "filename": "Dec24.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec24.XLS",
+      "type": "FS",
+      "date": "2025-12-24",
+      "filename": "Dec24.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec25.XLS",
+      "type": "PS",
+      "date": "2025-12-25",
+      "filename": "Dec25.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec25.XLS",
+      "type": "FS",
+      "date": "2025-12-25",
+      "filename": "Dec25.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec26.XLS",
+      "type": "PS",
+      "date": "2025-12-26",
+      "filename": "Dec26.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec26.XLS",
+      "type": "FS",
+      "date": "2025-12-26",
+      "filename": "Dec26.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec27.XLS",
+      "type": "PS",
+      "date": "2025-12-27",
+      "filename": "Dec27.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec27.XLS",
+      "type": "FS",
+      "date": "2025-12-27",
+      "filename": "Dec27.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec28.XLS",
+      "type": "PS",
+      "date": "2025-12-28",
+      "filename": "Dec28.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec28.XLS",
+      "type": "FS",
+      "date": "2025-12-28",
+      "filename": "Dec28.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec29.XLS",
+      "type": "PS",
+      "date": "2025-12-29",
+      "filename": "Dec29.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec29.XLS",
+      "type": "FS",
+      "date": "2025-12-29",
+      "filename": "Dec29.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec30.XLS",
+      "type": "PS",
+      "date": "2025-12-30",
+      "filename": "Dec30.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec30.XLS",
+      "type": "FS",
+      "date": "2025-12-30",
+      "filename": "Dec30.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/PS/Dec31.XLS",
+      "type": "PS",
+      "date": "2025-12-31",
+      "filename": "Dec31.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Dec/FS/Dec31.XLS",
+      "type": "FS",
+      "date": "2025-12-31",
+      "filename": "Dec31.XLS",
+      "month": "Dec"
+    },
+    {
+      "path": "/Data/2025-26/Jan/PS/Jan01.XLS",
+      "type": "PS",
+      "date": "2026-01-01",
+      "filename": "Jan01.XLS",
+      "month": "Jan"
+    },
+    {
+      "path": "/Data/2025-26/Jan/FS/Jan01.XLS",
+      "type": "FS",
+      "date": "2026-01-01",
+      "filename": "Jan01.XLS",
+      "month": "Jan"
+    },
+    {
+      "path": "/Data/2025-26/Jan/PS/Jan02.XLS",
+      "type": "PS",
+      "date": "2026-01-02",
+      "filename": "Jan02.XLS",
+      "month": "Jan"
+    },
+    {
+      "path": "/Data/2025-26/Jan/FS/Jan02.XLS",
+      "type": "FS",
+      "date": "2026-01-02",
+      "filename": "Jan02.XLS",
+      "month": "Jan"
+    },
+    {
+      "path": "/Data/2025-26/Jan/PS/Jan03.XLS",
+      "type": "PS",
+      "date": "2026-01-03",
+      "filename": "Jan03.XLS",
+      "month": "Jan"
+    },
+    {
+      "path": "/Data/2025-26/Jan/FS/Jan03.XLS",
+      "type": "FS",
+      "date": "2026-01-03",
+      "filename": "Jan03.XLS",
+      "month": "Jan"
+    },
+    {
+      "path": "/Data/2025-26/Jan/PS/Jan04.XLS",
+      "type": "PS",
+      "date": "2026-01-04",
+      "filename": "Jan04.XLS",
+      "month": "Jan"
+    },
+    {
+      "path": "/Data/2025-26/Jan/FS/Jan04.XLS",
+      "type": "FS",
+      "date": "2026-01-04",
+      "filename": "Jan04.XLS",
+      "month": "Jan"
+    },
+    {
+      "path": "/Data/2025-26/Jan/PS/Jan05.XLS",
+      "type": "PS",
+      "date": "2026-01-05",
+      "filename": "Jan05.XLS",
+      "month": "Jan"
+    },
+    {
+      "path": "/Data/2025-26/Jan/FS/Jan05.XLS",
+      "type": "FS",
+      "date": "2026-01-05",
+      "filename": "Jan05.XLS",
+      "month": "Jan"
+    }
+  ]
+}

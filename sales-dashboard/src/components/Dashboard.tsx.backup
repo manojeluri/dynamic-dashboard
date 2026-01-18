@@ -1,0 +1,510 @@
+import { useEffect, useState } from 'react';
+import {
+  LineChart,
+  Line,
+  BarChart,
+  Bar,
+  PieChart,
+  Pie,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts';
+import { TrendingUp, Package, DollarSign, Calendar, Building2 } from 'lucide-react';
+import type { DailySales } from '../types';
+import {
+  loadAllDataFromManifest,
+  aggregateByProduct,
+  aggregateByDate,
+  getTotalSales,
+  getTotalQuantity,
+  getTopProducts,
+  enrichWithCompanyData,
+  aggregateByCompany,
+  getTopCompanies,
+  aggregateByProductWithCompany,
+} from '../utils/dataLoader';
+import { getCompanyMapper } from '../utils/companyMapper';
+
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8', '#82CA9D'];
+
+// Helper function to format date from YYYY-MM-DD to DD-MM-YYYY
+function formatDate(dateStr: string): string {
+  const [year, month, day] = dateStr.split('-');
+  return `${day}-${month}-${year}`;
+}
+
+export default function Dashboard() {
+  const [salesData, setSalesData] = useState<DailySales[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedType, setSelectedType] = useState<'ALL' | 'PS' | 'FS'>('ALL');
+  const [selectedCompany, setSelectedCompany] = useState<string>('ALL');
+  const [selectedDate, setSelectedDate] = useState<string>('ALL');
+  const [availableCompanies, setAvailableCompanies] = useState<string[]>([]);
+  const [availableDates, setAvailableDates] = useState<string[]>([]);
+
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  async function loadData() {
+    setLoading(true);
+
+    // Load company mapper first
+    const companyMapper = await getCompanyMapper();
+
+    // Load all data files dynamically from manifest
+    const allData = await loadAllDataFromManifest();
+
+    // Enrich sales data with company information
+    enrichWithCompanyData(allData, companyMapper);
+
+    // Get list of companies
+    const companies = companyMapper.getAllCompanies();
+    setAvailableCompanies(companies);
+
+    // Get list of unique dates and sort them
+    const dates = Array.from(new Set(allData.map(d => d.date))).sort();
+    setAvailableDates(dates);
+
+    setSalesData(allData);
+    setLoading(false);
+  }
+
+  // Filter by type (PS/FS)
+  let filteredData = selectedType === 'ALL'
+    ? salesData
+    : salesData.filter(d => d.type === selectedType);
+
+  // Filter by date
+  if (selectedDate !== 'ALL') {
+    filteredData = filteredData.filter(d => d.date === selectedDate);
+  }
+
+  // Filter by company
+  if (selectedCompany !== 'ALL') {
+    filteredData = filteredData.map(daily => ({
+      ...daily,
+      records: daily.records.filter(r => r.company === selectedCompany),
+      totalAmount: daily.records.filter(r => r.company === selectedCompany).reduce((sum, r) => sum + r.TAXBLEAMT, 0),
+      totalQuantity: daily.records.filter(r => r.company === selectedCompany).reduce((sum, r) => sum + r.QTY, 0),
+    }));
+  }
+
+  const totalSales = getTotalSales(filteredData);
+  const totalQuantity = getTotalQuantity(filteredData);
+  const topProducts = aggregateByProductWithCompany(filteredData).slice(0, 10);
+  const dailyTrend = aggregateByDate(filteredData).map(d => ({
+    ...d,
+    date: formatDate(d.date),
+  }));
+  const topCompanies = getTopCompanies(salesData, 10);
+  const companyData = aggregateByCompany(filteredData);
+
+  // Calculate unique days
+  const uniqueDays = new Set(salesData.map(d => d.date)).size;
+
+  // Get unknown products (products without company mapping)
+  const unknownProducts = aggregateByProductWithCompany(salesData)
+    .filter(p => !p.company || p.company === 'Unknown')
+    .sort((a, b) => b.totalAmount - a.totalAmount);
+
+  // Aggregate by type (PS vs FS)
+  const typeComparison = [
+    {
+      type: 'PS (Pesticides)',
+      amount: getTotalSales(salesData.filter(d => d.type === 'PS')),
+      quantity: getTotalQuantity(salesData.filter(d => d.type === 'PS')),
+    },
+    {
+      type: 'FS (Fertilizers)',
+      amount: getTotalSales(salesData.filter(d => d.type === 'FS')),
+      quantity: getTotalQuantity(salesData.filter(d => d.type === 'FS')),
+    },
+  ];
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <div className="text-lg text-gray-600 font-medium">Loading sales data...</div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      {/* Header */}
+      <div className="bg-white shadow-sm border-b border-gray-200">
+        <div className="max-w-[1600px] mx-auto px-8 py-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900">Sales Analytics</h1>
+              <p className="text-sm text-gray-500 mt-1">Track your sales performance across all channels</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="text-right">
+                <p className="text-xs text-gray-500">Last updated</p>
+                <p className="text-sm font-semibold text-gray-700">{new Date().toLocaleDateString()}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-[1600px] mx-auto px-8 py-8">
+        {/* Filters */}
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8">
+          <div className="flex flex-wrap gap-6 items-center">
+            <div>
+              <label className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 block">Category</label>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setSelectedType('ALL')}
+                  className={`px-5 py-2.5 rounded-lg font-medium transition-all ${
+                    selectedType === 'ALL'
+                      ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md shadow-blue-200'
+                      : 'bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-200'
+                  }`}
+                >
+                  All Sales
+                </button>
+                <button
+                  onClick={() => setSelectedType('PS')}
+                  className={`px-5 py-2.5 rounded-lg font-medium transition-all ${
+                    selectedType === 'PS'
+                      ? 'bg-gradient-to-r from-green-600 to-green-700 text-white shadow-md shadow-green-200'
+                      : 'bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-200'
+                  }`}
+                >
+                  Pesticides
+                </button>
+                <button
+                  onClick={() => setSelectedType('FS')}
+                  className={`px-5 py-2.5 rounded-lg font-medium transition-all ${
+                    selectedType === 'FS'
+                      ? 'bg-gradient-to-r from-purple-600 to-purple-700 text-white shadow-md shadow-purple-200'
+                      : 'bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-200'
+                  }`}
+                >
+                  Fertilizers
+                </button>
+              </div>
+            </div>
+
+            <div className="border-l border-gray-200 pl-6">
+              <label className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 block">Date</label>
+              <select
+                value={selectedDate}
+                onChange={(e) => setSelectedDate(e.target.value)}
+                className="px-4 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-700 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              >
+                <option value="ALL">All Days</option>
+                {availableDates.map(date => (
+                  <option key={date} value={date}>{formatDate(date)}</option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 block">Company</label>
+              <select
+                value={selectedCompany}
+                onChange={(e) => setSelectedCompany(e.target.value)}
+                className="px-4 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-700 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent min-w-[200px]"
+              >
+                <option value="ALL">All Companies</option>
+                {availableCompanies.map(company => (
+                  <option key={company} value={company}>{company}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </div>
+
+        {/* Summary Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
+          <div className="bg-white p-6 rounded-lg shadow">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-500 text-sm">Total Sales</p>
+                <p className="text-2xl font-bold text-gray-900">
+                  ₹{totalSales.toLocaleString('en-IN')}
+                </p>
+              </div>
+              <DollarSign className="text-green-600" size={32} />
+            </div>
+          </div>
+
+          <div className="bg-white p-6 rounded-lg shadow">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-500 text-sm">Total Quantity</p>
+                <p className="text-2xl font-bold text-gray-900">{totalQuantity}</p>
+              </div>
+              <Package className="text-blue-600" size={32} />
+            </div>
+          </div>
+
+          <div className="bg-white p-6 rounded-lg shadow">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-500 text-sm">Companies</p>
+                <p className="text-2xl font-bold text-gray-900">{companyData.length}</p>
+              </div>
+              <Building2 className="text-indigo-600" size={32} />
+            </div>
+          </div>
+
+          <div className="bg-white p-6 rounded-lg shadow">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-500 text-sm">Products Sold</p>
+                <p className="text-2xl font-bold text-gray-900">
+                  {aggregateByProduct(filteredData).length}
+                </p>
+              </div>
+              <TrendingUp className="text-purple-600" size={32} />
+            </div>
+          </div>
+
+          <div className="bg-white p-6 rounded-lg shadow">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-500 text-sm">Days Tracked</p>
+                <p className="text-2xl font-bold text-gray-900">{uniqueDays}</p>
+              </div>
+              <Calendar className="text-orange-600" size={32} />
+            </div>
+          </div>
+        </div>
+
+        {/* Charts Row 1 */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          {/* Daily Sales Trend */}
+          <div className="bg-white p-6 rounded-lg shadow">
+            <h2 className="text-xl font-semibold mb-4">Daily Sales Trend</h2>
+            <ResponsiveContainer width="100%" height={300}>
+              <LineChart data={dailyTrend}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="date" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Line type="monotone" dataKey="amount" stroke="#8884d8" name="Amount (₹)" />
+                <Line type="monotone" dataKey="quantity" stroke="#82ca9d" name="Quantity" />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+
+          {/* PS vs FS Comparison */}
+          <div className="bg-white p-6 rounded-lg shadow">
+            <h2 className="text-xl font-semibold mb-4">PS vs FS Sales</h2>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={typeComparison}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="type" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="amount" fill="#8884d8" name="Amount (₹)" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Charts Row 2 */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          {/* Top 10 Products */}
+          <div className="bg-white p-6 rounded-lg shadow">
+            <h2 className="text-xl font-semibold mb-4">Top 10 Products by Sales</h2>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={topProducts} layout="vertical">
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis type="number" />
+                <YAxis dataKey="productName" type="category" width={150} />
+                <Tooltip />
+                <Bar dataKey="totalAmount" fill="#0088FE" name="Sales (₹)" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+
+          {/* Product Distribution Pie */}
+          <div className="bg-white p-6 rounded-lg shadow">
+            <h2 className="text-xl font-semibold mb-4">Top Products Distribution</h2>
+            <ResponsiveContainer width="100%" height={300}>
+              <PieChart>
+                <Pie
+                  data={topProducts.slice(0, 6)}
+                  dataKey="totalAmount"
+                  nameKey="productName"
+                  cx="50%"
+                  cy="50%"
+                  outerRadius={100}
+                  label
+                >
+                  {topProducts.slice(0, 6).map((_, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  ))}
+                </Pie>
+                <Tooltip />
+                <Legend />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Charts Row 3 - Company Analytics */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          {/* Top Companies by Sales */}
+          <div className="bg-white p-6 rounded-lg shadow">
+            <h2 className="text-xl font-semibold mb-4">Top 10 Companies by Sales</h2>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={topCompanies} layout="vertical">
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis type="number" />
+                <YAxis dataKey="companyName" type="category" width={120} />
+                <Tooltip />
+                <Bar dataKey="totalAmount" fill="#10B981" name="Sales (₹)" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+
+          {/* Company Market Share */}
+          <div className="bg-white p-6 rounded-lg shadow">
+            <h2 className="text-xl font-semibold mb-4">Company Market Share</h2>
+            <ResponsiveContainer width="100%" height={300}>
+              <PieChart>
+                <Pie
+                  data={topCompanies.slice(0, 8)}
+                  dataKey="totalAmount"
+                  nameKey="companyName"
+                  cx="50%"
+                  cy="50%"
+                  outerRadius={100}
+                  label={(entry) => entry.companyName}
+                >
+                  {topCompanies.slice(0, 8).map((_, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  ))}
+                </Pie>
+                <Tooltip />
+                <Legend />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Product Table */}
+        <div className="bg-white p-6 rounded-lg shadow">
+          <h2 className="text-xl font-semibold mb-4">Product Sales Details</h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Product Name
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Company
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Quantity
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Total Sales
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Avg Price
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-200">
+                {topProducts.slice(0, 20).map((product, index) => (
+                  <tr key={index} className="hover:bg-gray-50">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      {product.productName}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                      {product.company || 'Unknown'}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      {product.totalQty}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      ₹{product.totalAmount.toLocaleString('en-IN')}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      ₹{product.avgPrice.toFixed(2)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Unknown Products Section */}
+        {unknownProducts.length > 0 && (
+          <div className="bg-white p-6 rounded-lg shadow mt-6">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-semibold text-gray-900">
+                Unknown Products ({unknownProducts.length})
+              </h2>
+              <span className="px-3 py-1 bg-red-100 text-red-800 text-sm font-medium rounded-full">
+                Not Categorized
+              </span>
+            </div>
+            <p className="text-sm text-gray-600 mb-4">
+              These products are not matched to any company. Add them to the appropriate company CSV file to categorize them.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Product Name
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Quantity Sold
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Total Sales
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Avg Price
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {unknownProducts.map((product, index) => (
+                    <tr key={index} className="hover:bg-gray-50">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        {product.productName}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        {product.totalQty}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        ₹{product.totalAmount.toLocaleString('en-IN')}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        ₹{product.avgPrice.toFixed(2)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

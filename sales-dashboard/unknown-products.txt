@@ -1,0 +1,29 @@
+UNKNOWN PRODUCTS REPORT
+Generated: 2026-01-02T11:28:21.986Z
+
+Total unique products: 458
+Products matched: 440
+Products unknown: 18
+
+================================================================================
+
+PRODUCT LIST (sorted by frequency):
+
+  23 | Gsfc A/s 50kg
+   9 | Organic Potash 50kg
+   7 | Landlord-p 12;58 400gms
+   6 | Hily 16;0;9;19 10kg
+   5 | Acumist Calcium 1 Lt
+   5 | Landlord-p 12;58 800gms
+   5 | Chelamin 250gms
+   5 | Lanevo 250ml
+   3 | Champ Potash 0;0;50 25kg
+   2 | Plantex 13-0-45 1kg
+   2 | Gromorsponta 28 28 0 1kg
+   2 | Elpida 250gms
+   2 | Monostar 5lt
+   2 | Sulfonite 10kg
+   2 | Tracel 500gms
+   1 | Fertmax 12;61;0 25kg
+   1 | K-phonic 500gms
+   1 | Mokin Sc 150ml
